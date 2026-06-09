@@ -1,0 +1,12 @@
+import { PlaceholderPanel } from "@/components/common/PlaceholderPanel";
+import { formatCLP } from "@/lib/formatters";
+
+export function CotizacionStep() {
+  return (
+    <PlaceholderPanel
+      description={`Vista previa, guardado en historial y PDF con @react-pdf/renderer. Ejemplo CLP: ${formatCLP(1250000)}.`}
+      eyebrow="Paso 5"
+      title="Cotizacion final"
+    />
+  );
+}
