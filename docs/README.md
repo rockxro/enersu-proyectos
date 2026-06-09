@@ -123,6 +123,7 @@ The production installer is generated under `src-tauri/target/release/bundle/`.
 | Document | Description |
 |---|---|
 | [Design Decisions](./decisions.md) | Current technical and product decisions |
+| [Roadmap](./roadmap.md) | Recommended implementation order |
 | [Architecture](./architecture.md) | App structure, data flow and Tauri boundaries |
 | [Database Schema](./database.md) | SQLite tables and default parameters |
 | [Solar Calculation Logic](./solar-calculations.md) | Business formulas and calculation rules |

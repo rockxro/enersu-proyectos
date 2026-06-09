@@ -134,6 +134,7 @@ The product and technical decisions live in the `docs/` directory:
 - [`docs/architecture.md`](docs/architecture.md)
 - [`docs/database.md`](docs/database.md)
 - [`docs/decisions.md`](docs/decisions.md)
+- [`docs/roadmap.md`](docs/roadmap.md)
 - [`docs/solar-calculations.md`](docs/solar-calculations.md)
 - [`docs/pdf-template.md`](docs/pdf-template.md)
 
