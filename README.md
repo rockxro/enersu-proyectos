@@ -1,76 +1,142 @@
-# Dimensionador Fotovoltaico y Generador de Cotizaciones
+# Photovoltaic System Sizer & Quotation Generator
 
-Aplicacion desktop offline para dimensionar sistemas fotovoltaicos y generar cotizaciones profesionales. El proyecto nace como una iniciativa personal para resolver un flujo tecnico-comercial comun en empresas instaladoras solares: estimar generacion, seleccionar componentes y preparar una propuesta clara para el cliente final.
+![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?style=for-the-badge&logo=tauri&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=0B1220)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-Offline-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-El caso de uso fue aplicado al contexto de una empresa chilena de instalacion fotovoltaica, considerando datos de generacion mensual por panel que pueden obtenerse desde herramientas como el Explorador Solar de Chile o reemplazarse por cualquier metodo equivalente de estimacion.
+Offline desktop application for sizing photovoltaic systems and generating professional solar quotations. This project started as a personal initiative to solve a real technical-commercial workflow common in solar installation companies: estimate generation, select components, calculate system performance, and prepare a clear proposal for the final client.
 
-## What This App Will Do
+The use case was applied to the context of a Chilean photovoltaic installation company. It considers monthly generation per selected panel, usually sourced from tools such as Chile's Solar Explorer, while keeping the generation source replaceable by any equivalent estimation method.
 
-The application will guide an installer through a structured quotation flow:
+---
 
-1. **Cliente** - client data, address, tariff and commercial context.
-2. **Consumo** - monthly utility bill consumption, demand values and energy prices.
-3. **Dimensionamiento** - solar generation data, panel count, system type and calculation results.
-4. **Productos** - product and component selection from a local editable catalog.
-5. **Cotizacion** - final preview, quotation history and PDF generation.
+## What It Does
 
-The goal is to support both on-grid and residential hybrid solar systems, including local SQLite storage and professional PDF output.
+The app guides an installer through a structured quotation workflow:
+
+1. **Client** - customer data, address, tariff and commercial context.
+2. **Consumption** - monthly utility bill consumption, demand values and energy prices.
+3. **System sizing** - panel generation, panel count, system type and calculation results.
+4. **Products** - component selection from a local editable catalog.
+5. **Quotation** - final preview, quotation history and PDF generation.
+
+Supported system types:
+
+- **On-grid photovoltaic systems** with net billing and injection credits.
+- **Residential hybrid systems** with battery charge/discharge simulation.
+
+---
 
 ## Tech Stack
 
-- **Tauri 2** for the desktop shell.
-- **React 19 + Vite** for the frontend.
-- **TypeScript** for typed application logic.
-- **Tailwind CSS v4 + shadcn/ui** for the interface.
-- **Zustand** for global quotation state.
-- **react-hook-form + zod** for validated forms.
-- **SQLite via tauri-plugin-sql** for offline persistence.
-- **@react-pdf/renderer** for PDF generation.
+| Area | Tools |
+|---|---|
+| Desktop shell | Tauri 2 |
+| Frontend | React 19, Vite 7, TypeScript 5.8 |
+| Styling | Tailwind CSS v4, shadcn/ui, Base UI, Geist font |
+| State | Zustand |
+| Forms and validation | react-hook-form, zod |
+| Database | SQLite through `@tauri-apps/plugin-sql` / `tauri-plugin-sql` |
+| PDF | `@react-pdf/renderer` |
+| UI utilities | lucide-react, clsx, tailwind-merge, class-variance-authority |
+
+---
+
+## Architecture Snapshot
+
+```text
+src/
+|-- app/                 # Application shell: sidebar, topbar, footer
+|-- features/            # Domain modules and workflow steps
+|-- store/               # Zustand stores
+|-- services/            # Tauri, SQLite and PDF wrappers
+|-- types/               # TypeScript domain models
+|-- components/          # Shared UI and shadcn components
+|-- lib/                 # Constants, formatters and helpers
+
+src-tauri/
+|-- src/                 # Rust entrypoint and future commands
+|-- capabilities/        # Tauri permissions
+```
+
+The project is designed as an offline-first desktop app. The frontend owns the workflow, validation, calculations and PDF composition, while Tauri provides the native shell and local persistence capabilities.
+
+---
 
 ## Project Status
 
-This project is in early architecture and implementation stage. The base shell, documentation and project structure are being built before implementing the full quotation workflow, calculation engine, database migrations and PDF template.
+This repository is in early architecture and implementation stage.
 
-## Development
+Already in place:
 
-Requirements:
+- Tauri + React + TypeScript setup.
+- Tailwind CSS v4 and shadcn-compatible styling.
+- Base app shell with sidebar, topbar and workflow footer.
+- Initial feature-based folder structure.
+- Zustand stores and domain type skeletons.
+- SQLite plugin configuration.
+- Product and technical documentation under `docs/`.
+
+Next milestones:
+
+- Build validated forms for each workflow step.
+- Implement the photovoltaic calculation engine.
+- Add SQLite schema migrations and catalog CRUD.
+- Generate quotation PDFs with `@react-pdf/renderer`.
+- Add tests for calculation rules and workflow behavior.
+
+---
+
+## Getting Started
+
+### Requirements
 
 - Node.js 20+
 - Rust 1.88+
 - Tauri prerequisites for your operating system
 
-Install dependencies:
+### Install
 
 ```bash
 npm install
 ```
 
-Run the Vite frontend:
+### Run the frontend
 
 ```bash
 npm run dev
 ```
 
-Run the Tauri desktop app:
+### Run the desktop app
 
 ```bash
 npm run tauri dev
 ```
 
-Build:
+### Build
 
 ```bash
 npm run build
 npm run tauri build
 ```
 
+---
+
 ## Documentation
 
 The product and technical decisions live in the `docs/` directory:
 
-- `docs/README.md`
-- `docs/architecture.md`
-- `docs/database.md`
-- `docs/decisions.md`
-- `docs/solar-calculations.md`
-- `docs/pdf-template.md`
+- [`docs/README.md`](docs/README.md)
+- [`docs/architecture.md`](docs/architecture.md)
+- [`docs/database.md`](docs/database.md)
+- [`docs/decisions.md`](docs/decisions.md)
+- [`docs/solar-calculations.md`](docs/solar-calculations.md)
+- [`docs/pdf-template.md`](docs/pdf-template.md)
+
+---
+
+## License
+
+License not defined yet. This project is currently shared as a personal portfolio and learning project.
