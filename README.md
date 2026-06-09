@@ -1,4 +1,4 @@
-# Photovoltaic System Sizer & Quotation Generator
+# JouleX Solar Quotations
 
 ![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?style=for-the-badge&logo=tauri&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=0B1220)
@@ -6,7 +6,9 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-Offline-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-Offline desktop application for sizing photovoltaic systems and generating professional solar quotations. This project started as a personal initiative to solve a real technical-commercial workflow common in solar installation companies: estimate generation, select components, calculate system performance, and prepare a clear proposal for the final client.
+Desktop tool from the JouleX ecosystem for sizing photovoltaic systems and generating professional solar quotations. JouleX is a personal platform project focused on energy, productivity and technical tools; this repository contains one of its installer-focused tools.
+
+This project started as a personal initiative to solve a real technical-commercial workflow common in solar installation companies: estimate generation, select components, calculate system performance, and prepare a clear proposal for the final client.
 
 The use case was applied to the context of a Chilean photovoltaic installation company. It considers monthly generation per selected panel, usually sourced from tools such as Chile's Solar Explorer, while keeping the generation source replaceable by any equivalent estimation method.
 
