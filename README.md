@@ -1,6 +1,8 @@
-# Enersu Proyectos
+# Dimensionador Fotovoltaico y Generador de Cotizaciones
 
-Desktop application for professional solar quotation workflows in Chile. Enersu Proyectos is being built with Tauri, React and TypeScript as an offline-first tool for solar installers who need to prepare technical and commercial proposals quickly.
+Aplicacion desktop offline para dimensionar sistemas fotovoltaicos y generar cotizaciones profesionales. El proyecto nace como una iniciativa personal para resolver un flujo tecnico-comercial comun en empresas instaladoras solares: estimar generacion, seleccionar componentes y preparar una propuesta clara para el cliente final.
+
+El caso de uso fue aplicado al contexto de una empresa chilena de instalacion fotovoltaica, considerando datos de generacion mensual por panel que pueden obtenerse desde herramientas como el Explorador Solar de Chile o reemplazarse por cualquier metodo equivalente de estimacion.
 
 ## What This App Will Do
 
